@@ -8,11 +8,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/aop" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/binderlibrary" />
             <option value="$PROJECT_DIR$/eventbuslibrary" />
             <option value="$PROJECT_DIR$/hotfixlibrary" />
             <option value="$PROJECT_DIR$/networklibrary" />
+            <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/simple" />
           </set>
         </option>

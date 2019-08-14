@@ -48,4 +48,5 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation project(':hotfixlibrary')
     implementation project(':binderlibrary')
+    implementation 'com.alibaba:fastjson:1.1.71.android'
 }

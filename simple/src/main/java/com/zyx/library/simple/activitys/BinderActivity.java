@@ -1,9 +1,10 @@
 package com.zyx.library.simple.activitys;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import com.zyx.library.binderlibrary.ProcessManager;
 import com.zyx.library.simple.R;
@@ -15,7 +16,7 @@ import com.zyx.library.simple.binder.UserManager;
  * @date 10/3/19 下午10:16
  * @dec
  */
-public class BinderActivity extends AppCompatActivity {
+public class BinderActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,5 +30,14 @@ public class BinderActivity extends AppCompatActivity {
     public void jump(View view) {
         Intent intent = new Intent(this, BinderTestActivity.class);
         startActivity(intent);
+
+        AsyncTask asyncTask = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                return null;
+            }
+        };
+
+        asyncTask.execute();
     }
 }

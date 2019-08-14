@@ -22,4 +22,13 @@
             android:gravity="center"
             android:onClick="jumpBinder"/>
 
+    <Button
+            android:id="@+id/getresponse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="binder test"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:onClick="jumpBinder"/>
+
 </LinearLayout>

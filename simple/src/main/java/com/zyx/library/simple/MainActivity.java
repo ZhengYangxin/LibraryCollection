@@ -9,6 +9,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import com.zyx.library.simple.activitys.BinderActivity;
 import com.zyx.library.simple.activitys.SecondMainActivity;
+import com.zyx.library.simple.bean.ResonseData;
+import com.zyx.library.simple.urlconnecttion.HttpUtils;
+import com.zyx.library.simple.urlconnecttion.IJsonDataListener;
 
 public class MainActivity extends BaseActivity {
 
@@ -29,6 +32,27 @@ public class MainActivity extends BaseActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondMainActivity.class);
                 startActivity(intent);
+            }
+        });
+        
+        findViewById(R.id.getresponse).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendRequest();
+            }
+        });
+    }
+
+    private void sendRequest() {
+        HttpUtils.sendJsonRequest("http://api.2dfire-pre.com/cash-api/check_health", null, ResonseData.class, new IJsonDataListener() {
+            @Override
+            public void onSuccess(Object data) {
+
+            }
+
+            @Override
+            public void onFail() {
+
             }
         });
     }

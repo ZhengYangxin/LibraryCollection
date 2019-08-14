@@ -38,6 +38,7 @@ public class ResponseExecute implements ResponseExecutor{
                 break;
             case Constants.GET_METHOD:
                 Object object = CacheCenter.getInstance().getInstanceByClassName(requestBean.getClassName());
+                Class<?>[] clazzTypes = getParameterTypes(requestBean);
                 Method invokeMethod = CacheCenter.getInstance().getMethod(requestBean.getClassName(),  requestBean.getMehodName());
                 if (invokeMethod == null) {
                     throw new RuntimeException(invokeMethod.getName() + " is null");
@@ -78,6 +79,23 @@ public class ResponseExecute implements ResponseExecutor{
             mParameters = new Object[0];
         }
 
+        return mParameters;
+    }
+
+
+    private static Class<?>[] getParameterTypes(RequestBean requestBean) {
+        Class<?>[] mParameters = null;
+        RequestParameter[] requestParameters = requestBean.getRequestParameters();
+        if (requestParameters != null && requestParameters.length > 0) {
+            mParameters = new Class<?>[requestParameters.length];
+            for (int i = 0; i < requestParameters.length; i++) {
+                RequestParameter requestParameter = requestParameters[i];
+                Class<?> clazz = CacheCenter.getInstance().getCalssType(requestParameter.getParameterClassName());
+                mParameters[i] = clazz;
+            }
+        } else {
+            mParameters = new Class<?>[0];
+        }
         return mParameters;
     }
 
