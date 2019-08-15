@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/aop" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/binderlibrary" />
+            <option value="$PROJECT_DIR$/catchplugin" />
             <option value="$PROJECT_DIR$/eventbuslibrary" />
             <option value="$PROJECT_DIR$/hotfixlibrary" />
             <option value="$PROJECT_DIR$/networklibrary" />
